@@ -1,4 +1,3 @@
-import React from "react";
 import prisma from "@/prisma/client";
 import { notFound } from "next/navigation";
 import { Card, Flex, Heading, Text } from "@radix-ui/themes";
