@@ -3,13 +3,16 @@ import React from "react";
 import IssueStatusBadge from "../components/IssueStatusBadge";
 import Skeleton from "react-loading-skeleton";
 import "react-loading-skeleton/dist/skeleton.css";
-import IssueActions from "./issueActions";
+import IssueActions from "./IssueActions";
+import delay from "delay";
 
-const IssueLoadingPage = () => {
+const IssueLoadingPage = async () => {
   const issues = [1, 2, 3, 4, 5];
+  await delay(2000);
+
   return (
     <div>
-        <IssueActions />
+      <IssueActions />
       <Table.Root variant="surface">
         <Table.Header>
           <Table.Row>
