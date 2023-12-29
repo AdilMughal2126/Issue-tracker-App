@@ -4,6 +4,7 @@ import { Status } from "@prisma/client";
 import IssueActions from "./IssueActions";
 import IssueTable, { IssueQuery, columnNames } from "./IssueTable";
 import { Metadata } from "next";
+import { Flex } from "@radix-ui/themes";
 
 interface Props {
   searchParams: IssueQuery;
@@ -33,7 +34,7 @@ const IssuesPage = async ({ searchParams }: Props) => {
   const issueCount = await prisma.issue.count({ where });
 
   return (
-    <>
+    <Flex direction="column" gap="3">
       <IssueActions />
       <IssueTable searchParams={searchParams} issues={issues} />
       <Pagination
@@ -41,7 +42,7 @@ const IssuesPage = async ({ searchParams }: Props) => {
         currentPage={page}
         itemCount={issueCount}
       />
-    </>
+    </Flex>
   );
 };
 
