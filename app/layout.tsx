@@ -24,8 +24,8 @@ export default function RootLayout({
   children: React.ReactNode;
 }) {
   return (
-    <html lang="en" className={inter.variable}>
-      <body>
+    <html suppressHydrationWarning={true} lang="en" className={inter.variable}>
+      <body suppressHydrationWarning={true}>
         <QueryClientProvider>
           <AuthProvider>
             <Theme appearance="light" accentColor="violet">
